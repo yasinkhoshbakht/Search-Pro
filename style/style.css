@@ -17,11 +17,19 @@ header {
   font-family: roboto;
   align-items: center;
   justify-content: center;
+  padding: 0px 20px 0px 20px;
 }
-.search-container {
-  position: relative;
-  margin: 20px auto;
-  max-width: 300px;
+form {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.container {
+  width: 100%;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .search {
   width: 400px;
@@ -31,27 +39,32 @@ header {
   font-size: 16px;
   background-color: transparent;
 }
-.searchResultBox {
+.container div {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 15px;
   margin-bottom: 15px;
 }
-.searchResultBox h2 {
+.container div:hover {
+  transform: scale(1.05);
+  transition: 2s;
+  rotate: 360deg;
+}
+.container div h2 {
   font-size: 18px;
   margin-top: 0;
   margin-bottom: 10px;
 }
-.searchResultBox p {
+.container div p {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 10px;
 }
-.searchResultBox a {
+.container div a {
   color: #007bff;
   text-decoration: none;
 }
-.searchResultBox a:hover {
+.container div a:hover {
   text-decoration: underline;
 }

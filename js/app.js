@@ -1,51 +1,109 @@
-let container = document.querySelector(".search-container");
+let container = document.querySelector(".container");
 let search = document.querySelector(".search");
 let laptops = [
   {
     model: "ASUS vivoo book",
-    compani: "ASUS",
+    company: "ASUS",
   },
   {
     model: "Think Tad",
-    compani: "lenovo",
+    company: "lenovo",
   },
   {
     model: "Pro Book",
-    compani: "HP",
+    company: "HP",
   },
   {
     model: "Titan",
-    compani: "MSI",
+    company: "MSI",
   },
   {
     model: "Aorus",
-    compani: "GIGABYTE",
+    company: "GIGABYTE",
   },
   {
     model: "Vostro",
-    compani: "DELL",
+    company: "DELL",
+  },
+  {
+    model: "MacBook Pro",
+    company: "Apple",
+  },
+  {
+    model: "Surface Laptop",
+    company: "Microsoft",
+  },
+  {
+    model: "Swift",
+    company: "Acer",
+  },
+  {
+    model: "ZenBook",
+    company: "ASUS",
+  },
+  {
+    model: "Chromebook",
+    company: "Google",
+  },
+  {
+    model: "Gram",
+    company: "LG",
+  },
+  {
+    model: "MateBook",
+    company: "Huawei",
+  },
+  {
+    model: "Yoga",
+    company: "Lenovo",
+  },
+  {
+    model: "XPS",
+    company: "DELL",
+  },
+  {
+    model: "Legion",
+    company: "Lenovo",
+  },
+  {
+    model: "ROG Strix",
+    company: "ASUS",
+  },
+  {
+    model: "Envy",
+    company: "HP",
+  },
+  {
+    model: "Surface Book",
+    company: "Microsoft",
+  },
+  {
+    model: "Pavilion",
+    company: "HP",
+  },
+  {
+    model: "ThinkPad X1 Carbon",
+    company: "Lenovo",
   },
 ];
-console.log(laptops);
 let searchResult = laptops;
 search.addEventListener("input", (e) => {
-  const usersearchWord = e.target.value.toLowerCase();
+  const userSearchWord = e.target.value.toLowerCase();
   searchResult = laptops.filter((item) => {
-    return item.compani.toLowerCase().includes(usersearchWord);
+    return item.company.toLowerCase().includes(userSearchWord);
   });
   renderInUI(searchResult, container);
 });
 function renderInUI(array, place) {
+  place.innerHTML = "";
   array.forEach((item) => {
     const div = document.createElement("div");
-    container.innerHTML = `
-   <div class="searchResultBox">
-      <h2>${item.model}</h2>
-      <p>${item.compani}</p>
-      <a href="#">More Information</a>
-   </div>
-  `;
-    div.classList.add("searchResult");
-    place.appendchild(div);
+    div.innerHTML = `
+        <h2>${item.model}</h2>
+        <p>${item.company}</p>
+        <a href="#">More Information</a>
+    `;
+    place.appendChild(div);
   });
 }
+renderInUI(searchResult, container);
